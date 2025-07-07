@@ -31,5 +31,13 @@ public interface EmpService {
      */
     Emp getInfo(Integer id);
 
+    /**
+     * 修改员工信息
+     */
     void update(Emp emp);
+
+    /**
+     * 查询全部员工信息
+     */
+    List<Emp> findAll();
 }
