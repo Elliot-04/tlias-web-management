@@ -28,4 +28,16 @@ public class GlobalExceptionHandler {
         String[] arr = errMsg.split(" ");
         return Result.error(arr[2] + "已存在!");
     }
+
+    @ExceptionHandler
+    public Result handleDeleteClazzException(DeleteClazzException e) {
+        log.error("试图删除名下还有学生的班级，{}", e.getMessage());
+        return Result.error(e.getMessage());
+    }
+
+    @ExceptionHandler
+    public Result handleDeleteDeptException(DeleteDeptException e) {
+        log.error("试图删除名下还有员工的部门，{}", e.getMessage());
+        return Result.error(e.getMessage());
+    }
 }
