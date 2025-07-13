@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.anno.Log;
 import com.itheima.mapper.EmpMapper;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpQueryParam;
@@ -48,6 +49,7 @@ public class EmpController {
     /**
      * 新增员工
      */
+    @Log
     @PostMapping
     public Result save(@RequestBody Emp emp) {
         log.info("新增员工：{}", emp);
@@ -58,6 +60,7 @@ public class EmpController {
     /**
      * 删除员工
      */
+    @Log
     @DeleteMapping
     public Result delete(@RequestParam List<Integer> ids) {
         log.info("删除员工：{}", ids);
@@ -80,6 +83,7 @@ public class EmpController {
     /**
      * 修改员工信息
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Emp emp) {
         log.info("修改员工信息：{}", emp);
